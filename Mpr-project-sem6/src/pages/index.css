@@ -13,30 +13,31 @@ html {
 .str-video {
   background-color: #272a30;
   color: #ffffff;
-  height: 100vh; /* Ensure full viewport height */
+  height: 100dvh;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  min-width: 0;
   max-width: 100%;
 }
 
-.str-video__call-controls {
+.str-video__call-controls .str-video__composite-button__button {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
 }
 
-.str-video__call-controls .str-video__icon {
-  height: 50px;
+.str-video__call-controls .str-video__composite-button__button .str-video__icon {
+  /* height: 50px;
   width: 50px;
+  padding: 10px;
   font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  transform: scale(1.5); */
 }
 
 .str-video__call-controls__button--variant-danger {
   background-color: var(--str-video__button-tertiary-base);
+  padding: 10px;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -46,6 +47,17 @@ html {
   font-size: 30px;
 }
 
+.str-video__composite-button .str-video__composite-button__button-group .str-video__composite-button__button {
+  width: 50px;
+  height: 50px;
+}
+
+.str-video {
+  height: 82dvh;
+  /* height: fit-content; */
+}
+
+/* Layout adjustment to position video and participants list side by side */
 .layout {
   display: flex;
   height: 100%;
@@ -53,26 +65,32 @@ html {
   background-color: #272a30;
 }
 
+/* Video stream section */
 .video-stream {
   flex-grow: 1;
+  /* This will make the video stream area fill up the remaining space */
+  /* background-color: #000; */
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
+/* Positioning the participants list on the right side */
 .call-participants-list {
   width: 300px;
   background-color: #1f1f1f;
   color: #fff;
   padding: 15px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px 0px 0px 10px;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
   overflow-y: auto;
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
+/* Participants list styling (unchanged from your previous setup) */
 .call-participants-list h3 {
   margin-bottom: 10px;
   font-size: 18px;
@@ -92,11 +110,19 @@ html {
   border-bottom: 1px solid #333;
 }
 
+.call-participants-list li:last-child {
+  border-bottom: none;
+}
+
 .call-participants-list .avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   margin-right: 10px;
+}
+
+.call-participants-list .participant-info {
+  flex-grow: 1;
 }
 
 .call-participants-list .participant-info .name {
@@ -105,17 +131,36 @@ html {
 }
 
 .call-participants-list .participant-info .status {
+  display: flex;
+  align-items: center;
   color: #ccc;
+}
+
+.call-participants-list .participant-info .status svg {
+  margin-right: 5px;
+}
+
+.call-participants-list .controls {
+  display: flex;
+  align-items: center;
+}
+
+.call-participants-list .controls svg {
+  color: #ccc;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .call-participants-list .controls svg:hover {
   color: #fff;
 }
 
+/* Participants button to match the style of other call control buttons */
 .participants-btn {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  border: none;
   background-color: #19232d;
   color: white;
   display: flex;
@@ -129,12 +174,20 @@ html {
   background-color: #2a3a4d;
 }
 
+/* Ensure that the call controls and the button are in the same container */
 .controls-container {
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
+  margin-top: 20px;
   bottom: 20px;
   width: 85%;
   z-index: 1000;
+}
+
+.meeting-form {
+  position: relative;
+  z-index: 2;
+  /* Ensure it’s above other elements */
 }

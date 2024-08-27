@@ -1,0 +1,116 @@
+/* Login.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #121212;
+  /* Dark background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.login-box {
+  background: #1f1f1f;
+  /* Slightly lighter than the background */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  /* Subtle shadow */
+  text-align: center;
+  width: 300px;
+}
+
+.site-title {
+  color: #ffffff;
+  margin-bottom: 30px;
+  font-size: 36px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #333;
+  /* Dark background for inputs */
+  color: #ffffff;
+  /* White text */
+}
+
+.login-input::placeholder {
+  color: #bbbbbb;
+  /* Light grey placeholder */
+}
+
+.login-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;
+  /* Rounded button */
+  background-color: #3b82f6;
+  /* Modern blue color */
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #2563eb;
+  /* Slightly darker blue on hover */
+}
+
+.login-button:focus {
+  outline: none;
+}
+
+.toggle-link {
+  margin-top: 15px;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+.toggle-button:hover {
+  text-decoration: underline;
+}
+
+
+.switch-form {
+  margin-top: 1rem;
+  color: #bbb;
+  /* Light grey for the switch text */
+}
+
+.switch-link {
+  color: #6200ea;
+  /* Accent color for the link */
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.switch-link:hover {
+  color: #3700b3;
+  /* Darker shade on hover */
+}
