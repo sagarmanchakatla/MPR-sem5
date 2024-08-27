@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.str-video {
+  background-color: #272a30;
+  color: #ffffff;
+  height: 100vh; /* Ensure full viewport height */
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.str-video__call-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.str-video__call-controls .str-video__icon {
+  height: 50px;
+  width: 50px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.str-video__call-controls__button--variant-danger {
+  background-color: var(--str-video__button-tertiary-base);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.layout {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: #272a30;
+}
+
+.video-stream {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.call-participants-list {
+  width: 300px;
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 15px;
+  border-radius: 10px 0 0 10px;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.call-participants-list h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.call-participants-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.call-participants-list li {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.call-participants-list .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.call-participants-list .participant-info .name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.call-participants-list .participant-info .status {
+  color: #ccc;
+}
+
+.call-participants-list .controls svg:hover {
+  color: #fff;
+}
+
+.participants-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #19232d;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.participants-btn:hover {
+  background-color: #2a3a4d;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  width: 85%;
+  z-index: 1000;
+}
