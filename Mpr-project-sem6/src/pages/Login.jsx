@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./Auth.css"; // Import the CSS file
+import Navbar from "../Component/Navbar";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -31,29 +32,32 @@ function Login() {
   };
 
   return (
-    <div className="auth-container">
-      <div className="auth-box">
-        <h2>Login</h2>
-        <form onSubmit={handleLogin}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <button type="submit">Login</button>
-        </form>
-        {error && <p>{error}</p>}
+    <>
+      <Navbar />
+      <div className="auth-container">
+        <div className="auth-box">
+          <h2>Login</h2>
+          <form onSubmit={handleLogin}>
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit">Login</button>
+          </form>
+          {error && <p>{error}</p>}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -9,4 +9,6 @@ const {
 router.post("/register", handleUserRegister);
 router.post("/login", handleLoginUser);
 
+router.post("schedule-email");
+
 module.exports = router;
