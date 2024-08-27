@@ -1,30 +1,29 @@
 // Q1nkWUVzBZPU5eaj;
 // mongodb+srv://sagarmanchakatla01:Q1nkWUVzBZPU5eaj@cluster0.ufjo7.mongodb.net/
 
-require("dotenv").config();
+
+require('dotenv').config({ path: './database/.env' });
 const express = require("express");
-const mongoose = require("mongoose");
+const connectDB = require("./database/db");
 const cors = require("cors");
+
 const app = express();
-
+const corsOptions = {
+  origin: 'http://localhost:5173', // Replace with your frontend URL
+  methods: 'GET,POST',
+  allowedHeaders: 'Content-Type',
+};
+// Middleware
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
-const user_routes = require("./Routes/route");
+// Connect to the database
+connectDB();
 
-mongoose
-  .connect(
-    "mongodb+srv://sagarmanchakatla01:Q1nkWUVzBZPU5eaj@cluster0.ufjo7.mongodb.net/"
-  )
-  .then(() => {
-    console.log("MongoDB connected");
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// Routes
+app.use("/", require("./Routes/authroutes"));
 
-app.use("/api/user", user_routes);
-
-app.listen(8000, () => {
-  console.log(`http://localhost:8000`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
