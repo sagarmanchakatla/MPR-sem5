@@ -20,14 +20,15 @@ html {
   min-width: 0;
   max-width: 100%;
 }
-
 .str-video__call-controls .str-video__composite-button__button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.str-video__call-controls .str-video__composite-button__button .str-video__icon {
+.str-video__call-controls
+  .str-video__composite-button__button
+  .str-video__icon {
   /* height: 50px;
   width: 50px;
   padding: 10px;
@@ -47,17 +48,17 @@ html {
   font-size: 30px;
 }
 
-.str-video__composite-button .str-video__composite-button__button-group .str-video__composite-button__button {
+.str-video__composite-button
+  .str-video__composite-button__button-group
+  .str-video__composite-button__button {
   width: 50px;
   height: 50px;
 }
 
-.str-video {
+/* .str-video {
   height: 82dvh;
-  /* height: fit-content; */
-}
+} */
 
-/* Layout adjustment to position video and participants list side by side */
 .layout {
   display: flex;
   height: 100%;

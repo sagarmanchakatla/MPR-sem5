@@ -13,6 +13,7 @@ import {
 } from "@stream-io/video-react-sdk";
 import "@stream-io/video-react-sdk/dist/css/styles.css";
 import "./index.css";
+import { CgProfile } from "react-icons/cg";
 
 const apiKey = "mmhfdzb5evj2";
 const token =
@@ -117,6 +118,7 @@ const MyUILayout = () => {
         <CallControls />
         <button onClick={toggleParticipantsList} className="participants-btn">
           {/* Add participant icon or text here */}
+          <CgProfile />
         </button>
       </div>
     </StreamTheme>
